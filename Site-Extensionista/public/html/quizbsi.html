@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BSI - Bacharelado em Sistemas de Informação - Quiz</title>
+  <meta name="description" content="Quiz do curso BSI!">
+  <link rel="icon" type="image/png" href="../img/pixel.png" />
+  <link rel="stylesheet" href="../css/quizbsi.css">
+</head>
+
+<body>
+  <button id="scrollTopBtn" title="Voltar ao topo">↑</button>
+
+  <header class="header">
+    <nav class="nav-container">
+      <div class="logo">
+        <img src="../img/pixel.png" alt="Logo do site" id="logoimg">
+        <h2>BSI</h2>
+      </div>
+      <ul class="nav-menu">
+        <a href="./index.html" title="Voltar a página inicial"> <button class="btn-primary">Voltar</button></a>
+      </ul>
+
+    </nav>
+  </header>
+
+  <section class="secao2">
+    <div class="container2" id="quiz-container">
+      <div id="intro-screen">
+        <h3>Bem-vindo ao Quiz BSI 🎓</h3>
+        <p>Teste seus conhecimentos sobre o curso de Sistemas de Informação!</p>
+
+        <div class="name-input-area">
+          <label for="playerName">Digite seu nome:</label>
+          <input type="text" id="playerName" placeholder="Ex: Ana" maxlength="20">
+        </div>
+
+        <button id="startQuiz">Começar Quiz</button>
+        <p id="nameError" class="error-message"></p>
+      </div>
+    </div>
+  </section>
+
+
+
+
+
+  <footer id="contato" class="footer">
+    <div class="container">
+      <div class="footer-info">
+        <h3>BSI - Sistemas de Informação</h3>
+        <p>📧 pixelperfect.oficial@gmail.com</p>
+        <p>📍Formosa - GO</p>
+      </div>
+
+      <div class="footer-logo">
+        <img src="../img/pixel.png" alt="Logo BSI">
+        <p>&copy; 2025 BSI. Todos os direitos reservados.</p>
+      </div>
+    </div>
+  </footer>
+
+
+  <script>
+    // --- Botão Voltar ao Topo ---
+    const scrollTopBtn = document.getElementById("scrollTopBtn");
+
+    window.addEventListener("scroll", () => {
+      if (window.scrollY > 400) {
+        scrollTopBtn.classList.add("show");
+      } else {
+        scrollTopBtn.classList.remove("show");
+      }
+    });
+
+    scrollTopBtn.addEventListener("click", () => {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    });
+
+
+
+
+    const quizData = [
+      // Fáceis
+      {
+        question: "O que significa a sigla BSI?",
+        options: [
+          "Bacharelado em Sistemas de Informação",
+          "Banco de Software Integrado",
+          "Base de Segurança Informática",
+          "Biblioteca de Sistemas Inteligentes"
+        ],
+        correct: 0
+      },
+      {
+        question: "Qual linguagem é ensinada desde o início no curso?",
+        options: ["C#", "Python", "Java", "Swift"],
+        correct: 1
+      },
+      // Médias
+      {
+        question: "Qual área do BSI estuda o uso de dados e algoritmos inteligentes?",
+        options: [
+          "Engenharia de Software",
+          "Inteligência Artificial e Dados",
+          "Gestão de Negócios",
+          "Segurança da Informação"
+        ],
+        correct: 1
+      },
+      {
+        question: "Na Engenharia de Software, qual é uma das principais práticas estudadas?",
+        options: [
+          "Machine Learning",
+          "Gerência de Projetos de TI",
+          "Criptografia",
+          "Redes de Computadores"
+        ],
+        correct: 1
+      },
+      // Difíceis
+      {
+        question: "Segundo o conteúdo, qual a faixa salarial média de um cientista de dados?",
+        options: [
+          "R$ 3.000 a 6.000",
+          "R$ 5.000 a 9.000",
+          "R$ 14.630 a 24.480",
+          "R$ 9.000 a 12.000"
+        ],
+        correct: 2
+      },
+      {
+        question: "Quais são algumas tendências do mercado de TI em 2025?",
+        options: [
+          "Blockchain, IA e Cloud",
+          "Hardware, Impressoras e Backup",
+          "Photoshop e Design",
+          "Contabilidade Digital"
+        ],
+        correct: 0
+      }
+    ];
+
+    const container = document.getElementById("quiz-container");
+    const startBtn = document.getElementById("startQuiz");
+    const nameInput = document.getElementById("playerName");
+    const nameError = document.getElementById("nameError");
+
+    let userName = "";
+    let currentQuestion = 0;
+    let score = 0;
+
+    startBtn.addEventListener("click", () => {
+      userName = nameInput.value.trim();
+      if (userName.length < 3) {
+        nameError.textContent = "Por favor, insira um nome com pelo menos 3 letras.";
+        nameInput.classList.add("input-error");
+        return;
+      }
+      nameError.textContent = "";
+      startQuiz();
+    });
+
+    function startQuiz() {
+      currentQuestion = 0;
+      score = 0;
+      showQuestion();
+    }
+
+    function showQuestion() {
+      const q = quizData[currentQuestion];
+      container.innerHTML = `
+    <h3>Pergunta ${currentQuestion + 1} de ${quizData.length}</h3>
+    <p class="quiz-question">${q.question}</p>
+    <div class="quiz-options">
+      ${q.options
+          .map(
+            (opt, i) =>
+              `<button class="quiz-option" data-index="${i}">${opt}</button>`
+          )
+          .join("")}
+    </div>
+  `;
+
+      document.querySelectorAll(".quiz-option").forEach((btn) => {
+        btn.addEventListener("click", (e) => {
+          const selected = parseInt(e.target.dataset.index);
+          const correct = q.correct;
+          if (selected === correct) {
+            score++;
+            e.target.classList.add("correct");
+          } else {
+            e.target.classList.add("wrong");
+          }
+
+          // desativa os outros botões
+          document.querySelectorAll(".quiz-option").forEach((b) => (b.disabled = true));
+
+          setTimeout(() => {
+            currentQuestion++;
+            if (currentQuestion < quizData.length) showQuestion();
+            else showResult();
+          }, 800);
+        });
+      });
+    }
+
+    function showResult() {
+  const percentage = Math.round((score / quizData.length) * 100);
+  let message = "";
+
+  if (percentage === 100) message = "Excelente! Você dominou o conteúdo! 💪";
+  else if (percentage >= 80) message = "Parabéns! Você foi muito bem! 🚀";
+  else if (percentage >= 50) message = "Bom trabalho! Continue estudando! 📘";
+  else message = "Não desanime! Revise o conteúdo e tente novamente! 💡";
+
+  container.innerHTML = `
+    <h3>Resultado Final 🎯</h3>
+    <p><strong>${userName}</strong>, você acertou <strong>${percentage}%</strong> das perguntas.</p>
+    <p class="quiz-message">${message}</p>
+    <button id="restartQuiz">Recomeçar</button>
+  `;
+
+  document.getElementById("restartQuiz").addEventListener("click", () => {
+    location.reload();
+  });
+
+}
+
+
+  </script>
+</body>
+
+</html>

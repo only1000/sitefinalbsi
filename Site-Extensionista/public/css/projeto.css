@@ -1,0 +1,1191 @@
+@charset "UTF-8";
+
+/* Reset e padrão */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", "Segoe UI", sans-serif;
+}
+
+body {
+  line-height: 1.6;
+  background: #141414;
+  color: #eee;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+}
+
+
+/* Cabeçalho */
+.header {
+  background: linear-gradient(90deg, #0d47a1, #1565c0);
+  color: #fff;
+  padding: 1rem 2rem;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.5);
+}
+
+.nav-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: auto;
+  width: 100%;
+  gap: 32rem;
+}
+
+
+.logo {
+  display: flex;
+  justify-items: auto;
+  align-items: center;
+  gap: 4rem;
+  margin-left: -8rem;
+}
+
+
+#logoimg {
+  max-width: 80px;
+  filter: drop-shadow(0 0 10px #ffca28);
+}
+
+#oiz{
+  padding-bottom: 4rem;
+}
+
+.logo h2 {
+  font-size: 2.2rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-shadow: 0 0 10px #ffca28;
+}
+
+.nav-menu {
+  list-style: none;
+  display: flex;
+  gap: 2.7rem;
+  align-items: center;
+}
+
+
+.nav-menu a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 500;
+  position: relative;
+  transition: 0.3s;
+  font-size: 1.1rem;
+  font-family: sans-serif;
+}
+
+.nav-menu a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  width: 0%;
+  height: 2px;
+  background: #ffca28;
+  transition: width 0.3s;
+}
+
+.nav-menu a:hover::after {
+  width: 100%;
+}
+
+.btn-primary {
+  padding: 0.9rem 1.8rem;
+  border: none;
+  font-size: 1rem;
+  cursor: pointer;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  background: linear-gradient(90deg, #ffca28, #ffc107);
+  color: #000;
+  box-shadow: 0 0 15px #ffca28;
+  white-space: nowrap;
+  font-family: sans-serif;
+  font-weight: bold;
+}
+
+
+.btn-primary:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 25px #ffd54f;
+  font-weight: bolder;
+}
+
+.hero {
+
+  position: relative;
+  min-height: 86vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 5rem 2rem;
+  color: #fff;
+  background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+    url("../img/banner.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  background-attachment: scroll;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.45);
+  z-index: 1;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 900px;
+  margin: auto;
+  margin-bottom: 6rem;
+  animation: fadeIn 1.5s ease-in-out;
+}
+
+.hero-title {
+  font-size: 3rem;
+  margin-bottom: 4rem;
+  text-shadow: 0 0 20px #ffca28;
+}
+
+.highlight {
+  color: #ffca28;
+  text-shadow: 0 0 15px #ffca28;
+}
+
+.hero-subtitle {
+  font-size: 1.3rem;
+  margin-top: 0;
+  margin-bottom: 2rem;
+  opacity: 0.9;
+}
+
+
+
+section {
+  padding: 5rem 2rem;
+  position: relative;
+  animation: fadeInUp 1.2s ease forwards;
+  opacity: 0;
+}
+
+.container {
+  max-width: 1150px;
+  margin: auto;
+}
+
+.section-title {
+  font-size: 2.3rem;
+  margin-bottom: 3rem;
+  margin-top: 3rem;
+  text-align: center;
+  color: #ffca28;
+  text-shadow: 0 0 10px #ffca28;
+}
+
+/* Cartões com Glassmorphism */
+.about-card {
+  background: rgba(255, 255, 255, 0.08);
+  padding: 2rem;
+  border-radius: 15px;
+  backdrop-filter: blur(10px);
+  border: 1px solid #1565c0;
+  box-shadow: 0 4px 20px rgba(255, 255, 255, 0.05);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  margin-bottom: 3rem;
+  display: flex;
+  flex-direction: row;
+  gap: 20rem;
+}
+
+
+.about-card:hover {
+  transform: translateY(-10px) scale(1.05);
+  box-shadow: 0 0 25px #ffca28;
+}
+
+
+.about-card-menor>h3 {
+  margin-top: 1rem;
+  font-size: 1.5rem;
+}
+
+.about-card-menor>p {
+  margin-top: 4rem;
+  text-indent: 0.3rem;
+
+}
+
+#imagem1 {
+  height: 12rem;
+}
+
+#imagem2 {
+  height: 13rem;
+}
+
+#imagem3 {
+  height: 13.5rem;
+  margin-right: 0.3rem;
+}
+
+#container-lista {
+  display: flex;
+  flex-direction: row;
+  gap: 9rem;
+  margin-top: 6rem;
+  margin-right: 3rem;
+}
+
+.curriculum-list {
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 15px;
+  backdrop-filter: blur(10px);
+  border: 1px solid #1565c0;
+  box-shadow: 0 4px 20px rgba(255, 255, 255, 0.05);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  padding: 2.5rem;
+  display: flex;
+  flex-direction: column;
+}
+
+
+.curriculum-list>ul>li {
+  margin-top: 1rem;
+}
+
+
+
+.curriculum-list:hover {
+  transform: translateY(-10px) scale(1.05);
+  box-shadow: 0 0 25px #ffca28;
+}
+
+
+/* ======== Tabelas ======== */
+
+
+.careers-section table {
+  width: 100%;
+  border-collapse: collapse;
+  color: #fff;
+  background: rgba(255, 255, 255, 0.05);
+  margin-bottom: 2.5rem;
+  font-size: 1.05rem;
+  line-height: 1.8;
+  /* aumenta o espaçamento entre as linhas */
+  position: relative;
+}
+
+thead>tr>th {
+  position: sticky;
+  top: 110px;
+}
+
+
+.careers-section th {
+  background: #1565c0;
+  color: #fff;
+  padding: 1.2rem;
+  font-size: 1.1rem;
+}
+
+.careers-section td {
+  padding: 1.3rem;
+  border-top: 3px solid rgba(255, 255, 255, 0.2);
+  text-align: center;
+}
+
+.careers-section td span.valor {
+  color: #ffca28;
+  font-weight: bold;
+  text-shadow: 0 0 10px #ffca28;
+}
+
+.section-subtitle {
+  font-size: 1.25rem;
+  margin-bottom: 2.2rem;
+}
+
+#secao2 {
+  margin-top: 8rem;
+}
+
+#tabela2 {
+  margin-top: 2.5rem;
+}
+
+.tabela-aviso,
+.tabela-fonte {
+  font-size: 1rem;
+  color: white;
+  margin-top: 9px;
+}
+
+.tabela-aviso {
+  font-style: arial;
+  padding-bottom: 2px;
+}
+
+.tabela-fonte>a {
+  color: #0fbbbb;
+  text-decoration: none;
+}
+
+
+
+
+/* ======== LISTA DO MERCADO DE TRABALHO ======== */
+.market-section{
+  padding-bottom: 12rem;
+}
+.market-section ul {
+  list-style: none;
+  padding: 0;
+  margin-top: 3rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+.market-section li {
+  background: rgba(255, 255, 255, 0.08);
+  padding: 1.2rem 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 0 10px rgba(255, 202, 40, 0.2);
+  border-left: 4px solid #ffca28;
+  font-size: 1.05rem;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+}
+
+.market-section li::before {
+  content: "💡";
+  font-size: 1.3rem;
+  color: #ffca28;
+}
+
+.market-section li:hover {
+  transform: translateX(5px);
+  box-shadow: 0 0 20px rgba(255, 202, 40, 0.3);
+  background: rgba(255, 255, 255, 0.12);
+}
+
+/* ======== RODAPÉ ESTILIZADO ======== */
+.footer {
+  background: radial-gradient(circle, #0d47a1, #000);
+  color: #fff;
+  padding: 3rem 2rem;
+  text-align: center;
+  margin-top: 10rem;
+}
+
+.footer .container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.footer-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.8rem;
+  font-size: 1rem;
+}
+
+.footer-info h3 {
+  color: #ffca28;
+  text-shadow: 0 0 8px #ffca28;
+}
+
+.footer-logo img {
+  max-width: 80px;
+  filter: drop-shadow(0 0 10px #ffca28);
+  margin-bottom: 0.3rem;
+}
+
+.footer-logo p {
+  font-size: 0.9rem;
+  opacity: 0.9;
+}
+
+#scrollTopBtn {
+  position: fixed;
+  bottom: 30px;
+  left: 30px;
+  z-index: 9999;
+  background-color: #ffd700;
+  color: #222;
+  border: none;
+  border-radius: 50%;
+  padding: 12px 16px;
+  font-size: 22px;
+  cursor: pointer;
+  opacity: 0;
+  transform: scale(0.8);
+  transition: opacity 0.3s ease, transform 0.3s ease, background-color 0.3s ease;
+  width: 55px;
+}
+
+#scrollTopBtn:hover {
+  background-color: #ffea60;
+  transform: scale(1);
+}
+
+#scrollTopBtn.show {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* --- CHATBOT --- */
+#chatbot {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 340px;
+  height: 420px;
+  background-color: #fff;
+  border-radius: 16px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  transition: all 0.4s ease;
+  z-index: 9998;
+}
+
+/* Cabeçalho do chatbot */
+#chatbot-header {
+  background-color: #0056b3;
+  color: #fff;
+  padding: 12px;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.chatbot-buttons {
+  display: flex;
+  gap: 6px;
+}
+
+.chatbot-buttons button {
+  background: transparent;
+  border: none;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.chatbot-buttons button:hover {
+  transform: scale(1.2);
+}
+
+/* Corpo do chatbot */
+#chatbot-body {
+  padding: 15px;
+  overflow-y: auto;
+  flex: 1;
+}
+
+/* Estado minimizado */
+#chatbot.minimized {
+  width: 200px;
+  height: 50px;
+  border-radius: 12px;
+}
+
+#chatbot.minimized #chatbot-body {
+  display: none;
+}
+
+/* Animações */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+section.visible {
+  opacity: 1 !important;
+  transform: translateY(0) !important;
+}
+
+
+/* ===========================
+   CHATBOT
+=========================== */
+#chatbot {
+  position: fixed;
+  bottom: 20px;
+  right: 6px;
+  width: 320px;
+  max-height: 450px;
+  background: rgba(20, 20, 20, 0.95);
+  border: 1px solid #ffca28;
+  border-radius: 12px;
+  box-shadow: 0 0 15px rgba(255, 202, 40, 0.6);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  font-size: 0.9rem;
+  z-index: 2000;
+}
+
+#chat-header {
+  background: linear-gradient(90deg, #0d47a1, #1565c0);
+  color: #fff;
+  padding: 0.6rem;
+  text-align: center;
+  font-weight: bold;
+}
+
+#chat-log {
+  flex: 1;
+  padding: 0.5rem;
+  overflow-y: auto;
+  background: #111;
+}
+
+.user-msg {
+  text-align: right;
+  margin: 4px 0;
+  background: #ffca28;
+  color: #000;
+  padding: 6px 10px;
+  border-radius: 8px;
+  display: inline-block;
+}
+
+.bot-msg {
+  text-align: left;
+  margin: 4px 0;
+  background: #222;
+  color: #fff;
+  padding: 6px 10px;
+  border-radius: 8px;
+  display: inline-block;
+}
+
+.chat-input-area {
+  display: flex;
+  border-top: 1px solid #333;
+}
+
+#chat-input {
+  flex: 1;
+  border: none;
+  padding: 0.5rem;
+  background: #222;
+  color: #fff;
+  outline: none;
+}
+
+#chat-send {
+  background: #ffca28;
+  border: none;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  font-weight: bold;
+  border-left: 1px solid #333;
+  transition: 0.2s;
+}
+
+#chat-send:hover {
+  background: #ffd54f;
+}
+
+#restoreChat {
+  margin-right: 0.7rem;
+}
+
+
+/* ===============================
+   MENU RESPONSIVO - HAMBURGUER
+================================ */
+
+/* Oculta o botão hambúrguer por padrão */
+.menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 2rem;
+  cursor: pointer;
+  transition: transform 0.3s;
+}
+
+.menu-toggle:hover {
+  transform: scale(1.1);
+}
+
+
+/* --- Telas até 1469px --- */
+
+@media screen and (max-width: 1469px) {
+  .header {
+    background: linear-gradient(90deg, #0d47a1, #1565c0);
+    color: #fff;
+    padding: 1rem 2rem;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.5);
+  }
+
+  .nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: auto;
+    width: 100%;
+    gap: 10rem;
+  }
+
+
+  .logo {
+    display: flex;
+    justify-items: auto;
+    align-items: center;
+    gap: 3rem;
+    margin-left: -1rem;
+  }
+
+
+  #logoimg {
+    max-width: 80px;
+    filter: drop-shadow(0 0 10px #ffca28);
+  }
+
+
+  .logo h2 {
+    font-size: 2.2rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-shadow: 0 0 10px #ffca28;
+  }
+
+  .nav-menu {
+    list-style: none;
+    display: flex;
+    gap: 2.2rem;
+    align-items: center;
+  }
+
+
+  .nav-menu a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 500;
+    position: relative;
+    transition: 0.3s;
+    font-size: 1.1rem;
+    font-family: sans-serif;
+  }
+
+  .nav-menu a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -4px;
+    width: 0%;
+    height: 2px;
+    background: #ffca28;
+    transition: width 0.3s;
+  }
+
+  .nav-menu a:hover::after {
+    width: 100%;
+  }
+
+  .btn-primary {
+    padding: 0.9rem 1.8rem;
+    border: none;
+    font-size: 1rem;
+    cursor: pointer;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    background: linear-gradient(90deg, #ffca28, #ffc107);
+    color: #000;
+    box-shadow: 0 0 15px #ffca28;
+    white-space: nowrap;
+    font-family: sans-serif;
+    font-weight: bold;
+  }
+
+
+  .btn-primary:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 25px #ffd54f;
+    font-weight: bolder;
+  }
+}
+
+/* ======== ÁREA DE EXEMPLOS DE CÓDIGOS ======== */
+
+.example {
+    background: #1e1e2f;
+    border-radius: 12px;
+    padding: 20px;
+    margin: 20px auto;
+    max-width: 900px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+    transition: transform 0.2s ease;
+    margin-bottom: 100px;
+}
+
+.example:hover {
+    transform: translateY(-5px);
+}
+
+.example h2 {
+    font-size: 1.6rem;
+    color: #ffcc00;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+.code-area {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    background: #2c2c3e;
+    border-radius: 10px;
+    padding: 15px;
+    overflow-x: auto;
+}
+
+.code-area .code {
+    background: #2c2c3e;
+    color: #f8f8f2;
+    font-family: 'Fira Code', monospace;
+    font-size: 0.95rem;
+    padding: 10px;
+    border-radius: 8px;
+    overflow-x: auto;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+}
+
+.code-area button {
+    background: #ffcc00;
+    color: #141414;
+    font-weight: bold;
+    border: none;
+    border-radius: 8px;
+    padding: 8px 16px;
+    cursor: pointer;
+    align-self: flex-start;
+    transition: all 0.2s ease;
+}
+
+.code-area button:hover {
+    background: #e6b800;
+    transform: scale(1.05);
+}
+
+.output {
+    margin-top: 15px;
+    background: #262634;
+    padding: 12px 15px;
+    border-radius: 8px;
+    color: #f0f0f0;
+}
+
+.output h4 {
+    margin-bottom: 8px;
+    color: #ffcc00;
+}
+
+textarea.code {
+    resize: vertical;
+    min-height: 60px;
+}
+
+@media screen and (max-width: 768px) {
+    .example {
+        padding: 15px;
+        margin: 15px;
+    }
+
+    .code-area {
+        gap: 8px;
+    }
+
+    .code-area button {
+        width: 100%;
+    }
+}
+
+
+/* --- Telas até 1200px --- */
+@media screen and (max-width: 1200px) {
+
+  .nav-container {
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 0;
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+
+   thead>tr>th {
+    top: 85px;
+  }
+
+  .nav-menu {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    background: rgba(29, 29, 29, 0.911);
+    border-top: 2px solid #ffca28;
+    padding: 1rem 0;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    text-align: center;
+    z-index: 1000;
+
+  }
+
+  .nav-menu.show {
+    display: flex;
+  }
+
+  .nav-menu li {
+    margin: 0;
+    width: 100%;
+    padding-top: 0.4rem;
+  }
+
+  .nav-menu a {
+    font-size: 1rem;
+    color: #fff;
+  }
+
+  .btn-primary {
+    padding: 0.8rem 1.5rem;
+    font-size: 1rem;
+  }
+
+  .logo {
+    margin-left: 0;
+    gap: 1rem;
+  }
+
+  #logoimg {
+    max-width: 60px;
+  }
+
+  .about-card {
+    flex-direction: column;
+    gap: 6rem;
+  }
+
+  #container-lista {
+    display: flex;
+    flex-direction: column;
+    gap: 6rem;
+    margin-top: 5rem;
+    margin-right: 0rem;
+  }
+
+  .curriculum-list {
+    background: rgba(255, 255, 255, 0.08);
+    border-radius: 15px;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 4px 20px rgba(255, 255, 255, 0.05);
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+    padding: 2.5rem;
+    display: flex;
+    flex-direction: column;
+  }
+
+  #chatbot {
+    position: fixed;
+    bottom: 20px;
+    right: 3px;
+    width: 340px;
+    height: 420px;
+    background-color: #fff;
+    border-radius: 16px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    transition: all 0.4s ease;
+    z-index: 9998;
+  }
+
+  /* Cabeçalho do chatbot */
+  #chatbot-header {
+    background-color: #0056b3;
+    color: #fff;
+    padding: 12px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+
+
+
+}
+
+
+
+/* Botão trocar tema*/
+
+#themeToggle {
+  background: #ffca28;
+  border: none;
+  padding: 0.5rem 0.8rem;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 1.2rem;
+  margin-left: 1rem;
+  transition: all 0.3s ease;
+}
+
+#themeToggle:hover {
+  background: #ffd54f;
+  transform: scale(1.1);
+}
+
+/* Tema claro */
+body.light-theme {
+  background: #f4f4f4;
+  color: #222;
+}
+
+body.light-theme .header {
+  background: #0d47a1;
+  color: #fff;
+}
+
+body.light-theme .nav-menu a {
+  color: #fff;
+}
+
+body.light-theme .hero {
+  background: linear-gradient(rgba(255,255,255,0.6), rgba(255,255,255,0.6)), url("../img/banner.jpg");
+  color: #000;
+}
+
+body.light-theme .about-card,
+body.light-theme .curriculum-list,
+body.light-theme .market-section li,
+body.light-theme .example,
+body.light-theme .footer {
+  background: rgba(255, 255, 255, 0.9);
+  color: #222;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+}
+
+
+
+/* --- Telas até 768px --- */
+@media screen and (max-width: 768px) {
+  .nav-container {
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 0;
+  }
+
+    thead>tr>th {
+    top: 90px;
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+
+  .nav-menu {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    background: rgba(29, 29, 29, 0.911);
+    border-top: 2px solid #ffca28;
+    padding: 1rem 0;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    text-align: center;
+    z-index: 1000;
+
+  }
+
+  .nav-menu.show {
+    display: flex;
+  }
+
+  .nav-menu li {
+    margin: 0;
+    width: 100%;
+    padding-top: 0.4rem;
+  }
+
+  .nav-menu a {
+    font-size: 1rem;
+    color: #fff;
+  }
+
+  .btn-primary {
+    padding: 0.8rem 1.5rem;
+    font-size: 1rem;
+  }
+
+  .logo {
+    margin-left: 0;
+    gap: 1rem;
+  }
+
+  #logoimg {
+    max-width: 60px;
+  }
+
+  .about-card {
+    flex-direction: column;
+    gap: 6rem;
+  }
+
+
+  #container-lista {
+    display: flex;
+    flex-direction: column;
+    gap: 6rem;
+    margin-top: 5rem;
+    margin-right: 0rem;
+  }
+
+  .curriculum-list {
+    background: rgba(255, 255, 255, 0.08);
+    border-radius: 15px;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 4px 20px rgba(255, 255, 255, 0.05);
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+    padding: 2.5rem;
+    display: flex;
+    flex-direction: column;
+  }
+
+  #chatbot {
+    position: fixed;
+    bottom: 20px;
+    right: 3px;
+    width: 340px;
+    height: 420px;
+    background-color: #fff;
+    border-radius: 16px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    transition: all 0.4s ease;
+    z-index: 9998;
+  }
+
+  /* Cabeçalho do chatbot */
+  #chatbot-header {
+    background-color: #0056b3;
+    color: #fff;
+    padding: 12px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+
+
+}
+
+/* --- Telas até 480px --- */
+@media screen and (max-width: 480px) {
+  .logo h2 {
+    font-size: 1.4rem;
+  }
+
+  .btn-primary {
+    font-size: 0.9rem;
+  }
+
+  thead>tr>th {
+    top: 90px;
+  }
+}
+
+/* --- Telas até 320px --- */
+@media screen and (max-width: 320px) {
+  .nav-container {
+    flex-direction: column;
+    align-items: center;
+  }
+  thead>tr>th {
+    top: 100px;
+  }
+
+  .nav-menu {
+    width: 100%;
+  }
+
+  .nav-menu a {
+    font-size: 0.9rem;
+  }
+
+  .btn-primary {
+    width: 80%;
+    margin: 0 auto;
+  }
+
+  #logoimg {
+    max-width: 50px;
+  }
+}
+
+
+
