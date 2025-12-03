@@ -1290,3 +1290,78 @@ body.light-theme .footer {
 }
 
 
+/* ================================
+   BOTÃO DE TEMA
+=================================== */
+.theme-button {
+    background: #ffd86b;
+    color: #222;
+    padding: 8px 14px;
+    border-radius: 12px;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.theme-button:hover {
+    background: #ffcc4d;
+}
+
+/* ================================
+   TEMA CLARO PASTEL
+=================================== */
+
+.light-mode {
+    background-color: #fdf7e7 !important; /* bege pastel */
+    color: #222 !important;
+}
+
+/* HEADER no tema claro */
+.light-mode header {
+    background-color: #fff4c2 !important;
+}
+
+/* Cartões no modo claro */
+.light-mode .card {
+    background: #ffffff;
+    color: #222;
+    border: 1px solid #d4cba8;
+}
+
+/* BOTÕES no tema claro */
+.light-mode button,
+.light-mode .enviar-btn {
+    background-color: #ffe28a;
+    color: #222;
+    border: 1px solid #d1c27a;
+}
+
+.light-mode button:hover,
+.light-mode .enviar-btn:hover {
+    background-color: #ffdb70;
+}
+
+/* ================================
+   TABELAS NO MODO CLARO
+=================================== */
+.light-mode table,
+.light-mode th,
+.light-mode td {
+    color: #000 !important;
+    background-color: #fffdfa !important;
+    border: 1px solid #000 !important;
+}
+
+.dark-mode table,
+.dark-mode th,
+.dark-mode td {
+    color: #fff !important;
+    background-color: #1e1e1e !important;
+    border: 1px solid #fff !important;
+}
+
+/* Borda padrão */
+table, th, td {
+    border: 1px solid;
+}

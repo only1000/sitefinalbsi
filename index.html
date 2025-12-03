@@ -30,6 +30,11 @@
                 <li><a href="./Site-Extensionista/public/html/videos.html" target="_self" title="Videos">Videos</a></li>
                 <a href="../sitefinalbsi/Site-Extensionista/public/html/quizbsi.html" title="Quiz"> <button
                         class="btn-primary">Quiz</button></a>
+                          <li>
+        <button id="theme-toggle" class="theme-button">
+            🌙 
+        </button>
+    </li>
             </ul>
 
         </nav>
@@ -511,6 +516,42 @@
                 navMenu.classList.remove('show');
             });
         });
+
+
+
+        // ==== Alternar Tema Claro / Escuro ====
+
+const themeButton = document.getElementById("theme-toggle");
+const body = document.body;
+
+// Se já existir tema salvo, aplica
+if (localStorage.getItem("theme")) {
+    body.className = localStorage.getItem("theme");
+    updateButtonText();
+}
+
+themeButton.addEventListener("click", () => {
+    if (body.classList.contains("dark-mode")) {
+        body.classList.remove("dark-mode");
+        body.classList.add("light-mode");
+        localStorage.setItem("theme", "light-mode");
+    } else {
+        body.classList.remove("light-mode");
+        body.classList.add("dark-mode");
+        localStorage.setItem("theme", "dark-mode");
+    }
+
+    updateButtonText();
+});
+
+// Atualiza o texto do botão
+function updateButtonText() {
+    if (body.classList.contains("light-mode")) {
+        themeButton.textContent = "🌙 Dark";
+    } else {
+        themeButton.textContent = "☀️ Light";
+    }
+}
 
      
 
