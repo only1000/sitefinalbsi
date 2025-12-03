@@ -22,9 +22,6 @@
             </div>
             <button class="menu-toggle" id="menu-toggle" aria-label="Abrir menu">☰</button>
             <ul class="nav-menu" id="nav-menu">
-                <li>
-                    <button id="themeToggle" class="theme-btn">🌙</button>
-                </li>
                 <li><a href="#sobre" target="_self" title="Sobre">Sobre</a></li>
                 <li><a href="#disciplinas" target="_self" title="Disciplinas">Disciplinas</a></li>
                 <li><a href="#carreira" target="_self" title="Carreira">Carreira</a></li>
@@ -515,36 +512,7 @@
             });
         });
 
-        const themeBtn = document.getElementById("themeToggle");
-        const body = document.body;
-
-        // Carregar tema salvo
-        if (localStorage.getItem("theme") === "light") {
-            body.classList.add("light-mode");
-            themeBtn.textContent = "🌞";
-        } else {
-            body.classList.add("dark-mode");
-            themeBtn.textContent = "🌙";
-        }
-
-        themeBtn.addEventListener("click", () => {
-
-            if (body.classList.contains("light-mode")) {
-                body.classList.remove("light-mode");
-                body.classList.add("dark-mode");
-                localStorage.setItem("theme", "dark");
-                themeBtn.textContent = "🌙"; // ícone lua
-            } else {
-                body.classList.remove("dark-mode");
-                body.classList.add("light-mode");
-                localStorage.setItem("theme", "light");
-                themeBtn.textContent = "🌞"; // ícone sol
-            }
-        });
-
-
-
-
+     
 
     </script>
 
