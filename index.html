@@ -516,31 +516,31 @@
         });
 
         const themeBtn = document.getElementById("themeToggle");
-const body = document.body;
+        const body = document.body;
 
-// Carregar tema salvo
-if (localStorage.getItem("theme") === "light") {
-    body.classList.add("light-mode");
-    themeBtn.textContent = "🌞";
-} else {
-    body.classList.add("dark-mode");
-    themeBtn.textContent = "🌙";
-}
+        // Carregar tema salvo
+        if (localStorage.getItem("theme") === "light") {
+            body.classList.add("light-mode");
+            themeBtn.textContent = "🌞";
+        } else {
+            body.classList.add("dark-mode");
+            themeBtn.textContent = "🌙";
+        }
 
-themeBtn.addEventListener("click", () => {
+        themeBtn.addEventListener("click", () => {
 
-    if (body.classList.contains("light-mode")) {
-        body.classList.remove("light-mode");
-        body.classList.add("dark-mode");
-        localStorage.setItem("theme", "dark");
-        themeBtn.textContent = "🌙"; // ícone lua
-    } else {
-        body.classList.remove("dark-mode");
-        body.classList.add("light-mode");
-        localStorage.setItem("theme", "light");
-        themeBtn.textContent = "🌞"; // ícone sol
-    }
-});
+            if (body.classList.contains("light-mode")) {
+                body.classList.remove("light-mode");
+                body.classList.add("dark-mode");
+                localStorage.setItem("theme", "dark");
+                themeBtn.textContent = "🌙"; // ícone lua
+            } else {
+                body.classList.remove("dark-mode");
+                body.classList.add("light-mode");
+                localStorage.setItem("theme", "light");
+                themeBtn.textContent = "🌞"; // ícone sol
+            }
+        });
 
 
 
