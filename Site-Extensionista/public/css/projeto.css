@@ -1245,3 +1245,24 @@ body.light-theme .footer {
 
 
 
+/* Botão */
+.theme-btn {
+    background: transparent;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+    color: inherit;
+}
+
+/* Tema claro */
+.light-mode {
+    background-color: #f5f5f5;
+    color: #222;
+}
+
+/* Tema escuro */
+.dark-mode {
+    background-color: #121212;
+    color: #fff;
+}
+

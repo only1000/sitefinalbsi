@@ -22,13 +22,17 @@
             </div>
             <button class="menu-toggle" id="menu-toggle" aria-label="Abrir menu">☰</button>
             <ul class="nav-menu" id="nav-menu">
+                <li>
+                    <button id="themeToggle" class="theme-btn">🌙</button>
+                </li>
                 <li><a href="#sobre" target="_self" title="Sobre">Sobre</a></li>
                 <li><a href="#disciplinas" target="_self" title="Disciplinas">Disciplinas</a></li>
                 <li><a href="#carreira" target="_self" title="Carreira">Carreira</a></li>
                 <li><a href="#mercado" target="_self" title="Mercado">Mercado</a></li>
                 <li><a href="#contato" target="_self" title="Contato">Contato</a></li>
                 <li><a href="./Site-Extensionista/public/html/videos.html" target="_self" title="Videos">Videos</a></li>
-                <a href="../sitefinalbsi/Site-Extensionista/public/html/quizbsi.html" title="Quiz"> <button class="btn-primary">Quiz</button></a>
+                <a href="../sitefinalbsi/Site-Extensionista/public/html/quizbsi.html" title="Quiz"> <button
+                        class="btn-primary">Quiz</button></a>
             </ul>
 
         </nav>
@@ -52,8 +56,8 @@
                         <p>Você vai colocar a mão no código desde o início: Python, React, Node.js, mobile e muito mais.
                         </p>
                     </div>
-                    <img src="./Site-Extensionista/public/img/linguagem.webp" alt="Imagem ilustrativa relacionada a linguagens de programação"
-                        id="imagem1">
+                    <img src="./Site-Extensionista/public/img/linguagem.webp"
+                        alt="Imagem ilustrativa relacionada a linguagens de programação" id="imagem1">
                 </div>
                 <div class="about-card">
                     <div class="about-card-menor">
@@ -61,8 +65,8 @@
                         <p>Aprenda machine learning, análise de dados e ferramentas que estão transformando empresas no
                             mundo todo.</p>
                     </div>
-                    <img src="./Site-Extensionista/public/img/Ia.webp" alt="Imagem ilustrativa relacionada a Inteligência Artificial"
-                        id="imagem2">
+                    <img src="./Site-Extensionista/public/img/Ia.webp"
+                        alt="Imagem ilustrativa relacionada a Inteligência Artificial" id="imagem2">
                 </div>
                 <div class="about-card">
                     <div class="about-card-menor">
@@ -70,8 +74,8 @@
                         <p>Além de tecnologia, você desenvolve visão estratégica, empreendedorismo e gestão de projetos.
                         </p>
                     </div>
-                    <img src="./Site-Extensionista/public/img/Gestao-de-inovacao.webp" alt="Imagem ilustrativa relacionada a Negócios"
-                        id="imagem3">
+                    <img src="./Site-Extensionista/public/img/Gestao-de-inovacao.webp"
+                        alt="Imagem ilustrativa relacionada a Negócios" id="imagem3">
                 </div>
             </div>
         </div>
@@ -511,20 +515,48 @@
             });
         });
 
+        const themeBtn = document.getElementById("themeToggle");
+const body = document.body;
+
+// Carregar tema salvo
+if (localStorage.getItem("theme") === "light") {
+    body.classList.add("light-mode");
+    themeBtn.textContent = "🌞";
+} else {
+    body.classList.add("dark-mode");
+    themeBtn.textContent = "🌙";
+}
+
+themeBtn.addEventListener("click", () => {
+
+    if (body.classList.contains("light-mode")) {
+        body.classList.remove("light-mode");
+        body.classList.add("dark-mode");
+        localStorage.setItem("theme", "dark");
+        themeBtn.textContent = "🌙"; // ícone lua
+    } else {
+        body.classList.remove("dark-mode");
+        body.classList.add("light-mode");
+        localStorage.setItem("theme", "light");
+        themeBtn.textContent = "🌞"; // ícone sol
+    }
+});
+
+
 
 
 
     </script>
 
- 
+
 
     <script>
-  fetch("http://localhost:3000/api/acesso", {
-    method: "POST",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify({ pagina: "landing1" })
-  });
-</script>
+        fetch("http://localhost:3000/api/acesso", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ pagina: "landing1" })
+        });
+    </script>
 </body>
 
 </html>
