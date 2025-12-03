@@ -1144,6 +1144,22 @@ body.light-theme .footer {
 
 }
 
+@media (max-width: 430px) {
+    /* A tabela da área em alta */
+    .tabela-areas-em-alta {
+        width: 100%;
+        max-width: 100%;
+        margin: 0 auto;
+        font-size: 14px; /* evita quebra feia */
+        border-collapse: collapse;
+    }
+
+    .tabela-areas-em-alta th,
+    .tabela-areas-em-alta td {
+        padding: 8px; /* reduz o tamanho e evita quebra */
+        word-wrap: break-word;
+}}
+
 /* --- Telas até 480px --- */
 @media screen and (max-width: 480px) {
   .logo h2 {
