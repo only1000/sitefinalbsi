@@ -1158,6 +1158,46 @@ body.light-theme .footer {
     .tabela-areas-em-alta td {
         padding: 8px; /* reduz o tamanho e evita quebra */
         word-wrap: break-word;
+
+          /* Caixa do chatbot */
+    .chatbot-container {
+        width: 100%;
+        max-width: 320px;   /* ótimo para A31 */
+        right: 10px !important;
+        bottom: 10px !important;
+    }
+
+    /* Cabeçalho do chatbot */
+    .chatbot-header {
+        font-size: 15px;
+        padding: 8px;
+    }
+
+    /* Corpo do chatbot */
+    .chatbot-body {
+        height: 350px; /* reduz para caber */
+        padding: 8px;
+        font-size: 14px;
+    }
+
+    /* Input + botão */
+    .chatbot-input {
+        padding: 8px;
+        font-size: 14px;
+    }
+
+    .chatbot-button {
+        padding: 6px 10px;
+        font-size: 14px;
+    }
+
+    /* Balões de mensagem */
+    .message,
+    .user-message {
+        max-width: 85%;
+        font-size: 14px;
+        padding: 6px 8px;
+    }
 }}
 
 /* --- Telas até 480px --- */
