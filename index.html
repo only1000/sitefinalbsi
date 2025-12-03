@@ -372,7 +372,6 @@
         <div class="code-area">
             <textarea id="sec-code" class="code" spellcheck="false">Texto de exemplo</textarea>
             <button onclick="encryptText()">Criptografar</button>
-            <button onclick="decryptText()">Descriptografar</button>
         </div>
         <div class="output">
             <h4>Resultado:</h4>
@@ -429,15 +428,6 @@
             const text = document.getElementById("sec-code").value;
             const encoded = btoa(text);
             document.getElementById("sec-output").innerText = encoded;
-        }
-        function decryptText() {
-            const text = document.getElementById("sec-code").value;
-            try {
-                const decoded = atob(text);
-                document.getElementById("sec-output").innerText = decoded;
-            } catch (e) {
-                document.getElementById("sec-output").innerText = "Erro na descriptografia: " + e.message;
-            }
         }
 
     </script>
