@@ -1145,24 +1145,26 @@ body.light-theme .footer {
 }
 
 @media (max-width: 430px) {
-    /* A tabela da área em alta */
+
+    /* Tabela Áreas em Alta */
     .tabela-areas-em-alta {
         width: 100%;
         max-width: 100%;
         margin: 0 auto;
-        font-size: 14px; /* evita quebra feia */
+        font-size: 14px;
         border-collapse: collapse;
     }
 
     .tabela-areas-em-alta th,
     .tabela-areas-em-alta td {
-        padding: 8px; /* reduz o tamanho e evita quebra */
+        padding: 8px;
         word-wrap: break-word;
+    }
 
-          /* Caixa do chatbot */
+    /* Chatbot container */
     .chatbot-container {
         width: 100%;
-        max-width: 320px;   /* ótimo para A31 */
+        max-width: 320px;
         right: 10px !important;
         bottom: 10px !important;
     }
@@ -1175,7 +1177,7 @@ body.light-theme .footer {
 
     /* Corpo do chatbot */
     .chatbot-body {
-        height: 350px; /* reduz para caber */
+        height: 350px;
         padding: 8px;
         font-size: 14px;
     }
@@ -1198,7 +1200,7 @@ body.light-theme .footer {
         font-size: 14px;
         padding: 6px 8px;
     }
-}}
+}
 
 /* --- Telas até 480px --- */
 @media screen and (max-width: 480px) {
@@ -1214,7 +1216,51 @@ body.light-theme .footer {
     top: 90px;
   }
 }
+@media (max-width: 360px) {
 
+    /* Tabela ainda menor */
+    .tabela-areas-em-alta {
+        font-size: 12px;
+    }
+
+    .tabela-areas-em-alta th,
+    .tabela-areas-em-alta td {
+        padding: 6px;
+    }
+
+    /* Chatbot ainda mais compacto */
+    .chatbot-container {
+        max-width: 280px;
+    }
+
+    .chatbot-header {
+        font-size: 14px;
+        padding: 6px;
+    }
+
+    .chatbot-body {
+        height: 300px;
+        padding: 6px;
+        font-size: 13px;
+    }
+
+    .chatbot-input {
+        padding: 6px;
+        font-size: 13px;
+    }
+
+    .chatbot-button {
+        padding: 5px 8px;
+        font-size: 13px;
+    }
+
+    .message,
+    .user-message {
+        max-width: 90%;
+        font-size: 13px;
+        padding: 5px 6px;
+    }
+}
 /* --- Telas até 320px --- */
 @media screen and (max-width: 320px) {
   .nav-container {
